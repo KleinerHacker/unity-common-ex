@@ -5,12 +5,9 @@
   "description": "Unity / C# extensions for common features.",
   "unity": "2021.1",
   "keywords": [
-    "player",
+    "commons",
     "extension",
-    "tooling",
-    "preferences",
-    "settigs",
-    "options"
+    "tooling"
   ],
   "author": {
     "name": "Pfeiffer C Soft",
