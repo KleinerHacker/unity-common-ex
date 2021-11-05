@@ -89,9 +89,9 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
             return -1;
         }
 
-        public static T FirstOrThrow<T>(this IEnumerable<T> list, Func<Exception> exception)
+        public static T FirstOrThrow<T>(this IEnumerable<T> list, Func<T, bool> predicate, Func<Exception> exception)
         {
-            var firstOrDefault = list.FirstOrDefault();
+            var firstOrDefault = list.FirstOrDefault(predicate);
             if (Equals(firstOrDefault, default(T)))
                 throw exception();
 
