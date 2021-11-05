@@ -1,5 +1,5 @@
 {
-  "name": "org.pcsoft.unity.common-ex",
+  "name": "org.pcsoft.common-ex",
   "version": "1.0.0",
   "displayName": "Common Extension for C#",
   "description": "C# extensions for common features.",
