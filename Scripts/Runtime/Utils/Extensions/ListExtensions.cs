@@ -78,15 +78,24 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
             return list.Where(x => !Equals(x, item));
         }
 
-        public static int IndexOf<T>(this IEnumerable<T> list, T item)
+        public static int IndexOf<T>(this IEnumerable<T> list, Predicate<T> predicate)
         {
             for (var i = 0; i < list.Count(); i++)
             {
-                if (Equals(list.ElementAt(i), item))
+                if (predicate(list.ElementAt(i)))
                     return i;
             }
 
             return -1;
+        }
+
+        public static T FindOrThrow<T>(this IEnumerable<T> list, Func<Exception> exception)
+        {
+            var firstOrDefault = list.FirstOrDefault();
+            if (Equals(firstOrDefault, default(T)))
+                throw exception();
+
+            return firstOrDefault;
         }
     }
 }

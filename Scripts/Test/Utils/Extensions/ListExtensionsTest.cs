@@ -38,8 +38,8 @@ namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils.Extensions
         public void IndexOf()
         {
             var array = new [] {"Hello", "World", "Unity"};
-            var foundIndex = array.IndexOf("World");
-            var unknownIndex = array.IndexOf("Foo");
+            var foundIndex = array.IndexOf(x => x == "World");
+            var unknownIndex = array.IndexOf(x => x == "Foo");
             
             Assert.AreEqual(1, foundIndex);
             Assert.AreEqual(-1, unknownIndex);
