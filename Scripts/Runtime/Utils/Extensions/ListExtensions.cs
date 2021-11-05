@@ -89,7 +89,7 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
             return -1;
         }
 
-        public static T FindOrThrow<T>(this IEnumerable<T> list, Func<Exception> exception)
+        public static T FirstOrThrow<T>(this IEnumerable<T> list, Func<Exception> exception)
         {
             var firstOrDefault = list.FirstOrDefault();
             if (Equals(firstOrDefault, default(T)))
