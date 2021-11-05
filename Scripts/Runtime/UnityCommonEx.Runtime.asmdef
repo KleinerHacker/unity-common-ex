@@ -1,6 +1,6 @@
 {
-    "name": "UnityCommons.Runtime",
-    "rootNamespace": "UnityCommons.Runtime",
+    "name": "UnityCommonEx.Runtime",
+    "rootNamespace": "UnityCommonEx.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

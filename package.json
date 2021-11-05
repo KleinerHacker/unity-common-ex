@@ -1,8 +1,8 @@
 {
-  "name": "org.pcsoft.unity.commons",
+  "name": "org.pcsoft.unity.common-ex",
   "version": "1.0.0",
-  "displayName": "Unity Commons",
-  "description": "Unity / C# extensions for common features.",
+  "displayName": "Common Extension for C#",
+  "description": "C# extensions for common features.",
   "unity": "2021.1",
   "keywords": [
     "commons",
@@ -12,6 +12,6 @@
   "author": {
     "name": "Pfeiffer C Soft",
     "email": "kl3in3rhack3r@gmail.com",
-    "url": "https://github.com/KleinerHacker/unity-commons"
+    "url": "https://github.com/KleinerHacker/unity-common-ex"
   }
 }

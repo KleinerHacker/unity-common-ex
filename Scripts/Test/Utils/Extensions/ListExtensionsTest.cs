@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using NUnit.Framework;
-using UnityCommons.Runtime.commons.Scripts.Runtime.Utils.Extensions;
+using UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions;
 
-namespace UnityCommons.Test.commons.Scripts.Test.Utils.Extensions
+namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils.Extensions
 {
     public class ListExtensionsTest
     {

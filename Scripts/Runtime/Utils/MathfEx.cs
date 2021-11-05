@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnityCommons.Runtime.commons.Scripts.Runtime.Utils
+namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 {
     public static class MathfEx
     {

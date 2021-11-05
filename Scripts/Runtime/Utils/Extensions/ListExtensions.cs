@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace UnityCommons.Runtime.commons.Scripts.Runtime.Utils.Extensions
+namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
 {
     public static class ListExtensions
     {
