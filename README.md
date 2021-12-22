@@ -13,3 +13,7 @@ Scope: org.pcsoft
 It contains `MathfEx` with extended methods and constants.
 
 Additional there are a lot of extension functions for different types.
+
+Additional utils:
+* `Decrementer`
+* `MutualRunner`
