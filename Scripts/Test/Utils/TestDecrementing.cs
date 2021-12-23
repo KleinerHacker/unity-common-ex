@@ -16,7 +16,7 @@ namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils
                 counter++;
             }
             
-            Assert.AreEqual(10, counter);
+            Assert.AreEqual(9, counter);
         }
     }
 }

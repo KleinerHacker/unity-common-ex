@@ -1,6 +1,6 @@
 {
   "name": "org.pcsoft.common-ex",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "displayName": "Common Extension for C#",
   "description": "C# extensions for common features.",
   "unity": "2021.1",
