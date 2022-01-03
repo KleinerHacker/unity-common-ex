@@ -10,7 +10,8 @@ URL: https://package.openupm.com
 Scope: org.pcsoft
 
 # usage
-It contains `MathfEx` with extended methods and constants.
+It contains `MathfEx` with extended methods and constants:
+* `Remap` - Remap from one range to another range
 
 Additional there are a lot of extension functions for different types:
 * Lists
