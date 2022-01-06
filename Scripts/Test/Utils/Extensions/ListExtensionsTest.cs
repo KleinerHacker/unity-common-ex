@@ -86,5 +86,15 @@ namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils.Extensions
             Assert.AreEqual(3, foundIndex);
             Assert.AreEqual(-1, unknownIndex);
         }
+
+        [Test]
+        public void Doublets()
+        {
+            var array = new [] {"Hello", "World", "Unity", "World"};
+            Assert.IsTrue(array.HasDoublets());
+            
+            array = new [] {"Hello", "World", "Unity"};
+            Assert.IsFalse(array.HasDoublets());
+        }
     }
 }
