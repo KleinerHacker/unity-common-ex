@@ -217,6 +217,25 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
 
             return firstOrDefault;
         }
+
+        /// <summary>
+        /// Check that the given list has doublets
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="exteractor">Extractor to use for value to check for</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>TRUE if doublets was found, otherwise false</returns>
+        public static bool HasDoublets<T>(this IEnumerable<T> items, Func<T, object> exteractor) => 
+            items.GroupBy(exteractor).Any(x => x.Count() > 1);
+
+        /// <summary>
+        /// Check that the given list has doublets
+        /// </summary>
+        /// <param name="items"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>TRUE if doublets was found, otherwise false</returns>
+        public static bool HasDoublets<T>(this IEnumerable<T> items) =>
+            HasDoublets(items, x => x);
     }
 
     /// <summary>
