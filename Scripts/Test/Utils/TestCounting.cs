@@ -11,7 +11,7 @@ namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils
             var decrementing = new Decrementing(10);
 
             var counter = 0;
-            while (!decrementing.Try(() => {}))
+            while (!decrementing.Try(() => {}) && counter < 100)
             {
                 counter++;
             }
@@ -25,7 +25,7 @@ namespace UnityCommonEx.Test.common_ex.Scripts.Test.Utils
             var incrementing = new Incrementing(10);
 
             var counter = 0;
-            while (!incrementing.Try(() => {}))
+            while (!incrementing.Try(() => {}) && counter < 100)
             {
                 counter++;
             }

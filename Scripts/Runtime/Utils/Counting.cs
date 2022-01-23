@@ -17,6 +17,8 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
         {
             _max = maxValue;
             _autoReset = autoReset;
+
+            _counter = ResetCounterValue;
         }
 
         /// <summary>
@@ -27,21 +29,11 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
         /// <returns>TRUE if action was run, otherwise FALSE</returns>
         public bool Try(float value, Action action)
         {
-            if (CheckCounter(_counter))
-            {
-                if (_autoReset)
-                {
-                    _counter = ResetCounter();
-                }
-
-                return false;
-            }
-
             _counter = CalcCounter(_counter, value);
             if (CheckCounter(_counter))
             {
                 action?.Invoke();
-                _counter = _autoReset ? ResetCounter() : ZeroCounter();
+                _counter = _autoReset ? ResetCounterValue : ZeroCounterValue;
 
                 return true;
             }
@@ -58,8 +50,8 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 
         protected abstract float CalcCounter(float counter, float value);
         protected abstract bool CheckCounter(float counter);
-        protected abstract float ResetCounter();
-        protected abstract float ZeroCounter();
+        protected abstract float ResetCounterValue { get; }
+        protected abstract float ZeroCounterValue { get; }
     }
 
     /// <summary>
@@ -80,9 +72,9 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 
         protected override bool CheckCounter(float counter) => counter <= 0f;
 
-        protected override float ResetCounter() => _max;
+        protected override float ResetCounterValue => _max;
 
-        protected override float ZeroCounter() => 0f;
+        protected override float ZeroCounterValue => 0f;
     }
 
     /// <summary>
@@ -103,8 +95,8 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 
         protected override bool CheckCounter(float counter) => counter >= _max;
 
-        protected override float ResetCounter() => 0f;
+        protected override float ResetCounterValue => 0f;
 
-        protected override float ZeroCounter() => _max;
+        protected override float ZeroCounterValue => _max;
     }
 }
