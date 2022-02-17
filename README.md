@@ -10,20 +10,6 @@ URL: https://package.openupm.com
 Scope: org.pcsoft
 
 # usage
-It contains `MathfEx` with extended methods and constants:
-* `Remap` - Remap from one range to another range
+It contains `MathfEx` with extended methods and constants.
 
-Additional there are a lot of extension functions for different types:
-* Lists
-  * `GetRandom`
-  * `ToWeightList`
-  * `GetRandomByWeight`
-  * `Remove`
-  * `RemoveAll`
-  * `IndexOf` (with Predicate)
-  * `LastIndexOf` (with Predicate)
-  * `FirstOrThrow` (throws custom Exception)
-
-Additional utils:
-* `Decrementing`
-* `MutualRunner`
+Additional there are a lot of extension functions for different types.
