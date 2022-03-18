@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
 {
@@ -28,5 +30,14 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
                 dictionary[key] = value;
             }
         }
+
+        public static bool ContainsType<T>(this IDictionary<Type, T> dictionary, Type type) => dictionary.Keys.Any(type.IsAssignableFrom);
+
+        public static T GetByType<T>(this IDictionary<Type, T> dictionary, Type type) => 
+            dictionary.First(x => type.IsAssignableFrom(x.Key)).Value;
+        
+        public static IDictionary<Type, T> GetAllByType<T>(this IDictionary<Type, T> dictionary, Type type) => 
+            dictionary.Where(x => type.IsAssignableFrom(x.Key))
+                .ToDictionary(x => x.Key, x => x.Value);
     }
 }
