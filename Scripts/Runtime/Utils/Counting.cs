@@ -99,4 +99,26 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 
         protected override float ZeroCounterValue => _max;
     }
+
+    public sealed class ActionCounting
+    {
+        private int _counter;
+
+        public void StartAction()
+        {
+            _counter++;
+        }
+
+        public bool StopAction()
+        {
+            if (_counter - 1 <= 0)
+            {
+                _counter = 0;
+                return true;
+            }
+            
+            _counter--;
+            return false;
+        }
+    }
 }
