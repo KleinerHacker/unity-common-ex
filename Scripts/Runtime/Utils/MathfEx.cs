@@ -10,6 +10,26 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
             Mathf.Clamp((value - from1) / (to1 - from1) * (to2 - from2) + from2, from2, to2);
 
         public static float Remap01(float value, float from, float to) => Remap(value, from, to, 0f, 1f);
+        
+        public static Vector2 GetPointInCircleArea(Vector2 center, float radius)
+        {
+            var arc = Random.Range(0f, 2f * Mathf.PI);
+            var posRad = Random.Range(0f, radius);
+
+            var x = Mathf.Sin(arc) * posRad;
+            var z = Mathf.Cos(arc) * posRad;
+            
+            return center + new Vector2(x, z);
+        }
+
+        public static Vector2 GetPointInRectangleArea(Bounds bounds) => 
+            GetPointInRectangleArea(bounds.center, bounds.size);
+
+        public static Vector2 GetPointInRectangleArea(Vector2 center, Vector2 size) =>
+            new Vector2(
+                center.x + Random.Range(-size.x / 2f, size.x / 2f),
+                center.y + Random.Range(-size.y / 2f, size.y / 2f)
+            );
     }
 
     public struct Box
