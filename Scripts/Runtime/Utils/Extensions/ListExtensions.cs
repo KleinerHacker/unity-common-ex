@@ -236,6 +236,40 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
         /// <returns>TRUE if doublets was found, otherwise false</returns>
         public static bool HasDoublets<T>(this IEnumerable<T> items) =>
             HasDoublets(items, x => x);
+        
+        /// <summary>
+        /// Run over all elements in list and call the visitor
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="visitor"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> list, Action<T, int> visitor)
+        {
+            for (var i=0; i<list.Count(); i++)
+            {
+                visitor(list.ElementAt(i), i);
+            }
+
+            return list;
+        }
+        
+        /// <summary>
+        /// Run over all elements in list and call the visitor
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="visitor"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> list, Action<T> visitor)
+        {
+            foreach (var item in list)
+            {
+                visitor(item);
+            }
+
+            return list;
+        }
     }
 
     /// <summary>
