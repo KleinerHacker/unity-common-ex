@@ -164,6 +164,8 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions
         /// <returns>List without items</returns>
         public static IEnumerable<T> RemoveAll<T>(this IEnumerable<T> list, params T[] items) => list.Where(x => !items.Contains(x));
 
+        public static IEnumerable<T> RemoveIf<T>(this IEnumerable<T> list, Predicate<T> predicate) => list.Where(x => !predicate(x));
+
         /// <summary>
         /// Returns the index of given predicate. This is the first index that was found.
         /// </summary>
