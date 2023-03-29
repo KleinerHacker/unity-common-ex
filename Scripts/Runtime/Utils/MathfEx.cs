@@ -5,12 +5,12 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
     public static class MathfEx
     {
         public const float Radiant = 2f * Mathf.PI / 360f;
-        
-        public static float Remap (float value, float from1, float to1, float from2, float to2) => 
+
+        public static float Remap(float value, float from1, float to1, float from2, float to2) =>
             Mathf.Clamp((value - from1) / (to1 - from1) * (to2 - from2) + from2, from2, to2);
 
         public static float Remap01(float value, float from, float to) => Remap(value, from, to, 0f, 1f);
-        
+
         public static Vector2 GetPointInCircleArea(Vector2 center, float radius)
         {
             var arc = Random.Range(0f, 2f * Mathf.PI);
@@ -18,11 +18,11 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
 
             var x = Mathf.Sin(arc) * posRad;
             var z = Mathf.Cos(arc) * posRad;
-            
+
             return center + new Vector2(x, z);
         }
 
-        public static Vector2 GetPointInRectangleArea(Bounds bounds) => 
+        public static Vector2 GetPointInRectangleArea(Bounds bounds) =>
             GetPointInRectangleArea(bounds.center, bounds.size);
 
         public static Vector2 GetPointInRectangleArea(Vector2 center, Vector2 size) =>
@@ -30,6 +30,26 @@ namespace UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils
                 center.x + Random.Range(-size.x / 2f, size.x / 2f),
                 center.y + Random.Range(-size.y / 2f, size.y / 2f)
             );
+
+        public static uint Fibonacci(uint n)
+        {
+            if (n <= 1)
+            {
+                return n;
+            }
+
+            uint prev = 0;
+            uint current = 1;
+
+            for (uint i = 2; i <= n; i++)
+            {
+                var next = prev + current;
+                prev = current;
+                current = next;
+            }
+
+            return current;
+        }
     }
 
     public struct Box
